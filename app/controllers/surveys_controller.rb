@@ -64,7 +64,8 @@ class SurveysController < ApplicationController
   def entrar
     numero = params[:numerodocumento]
     
-    if numero != ""
+    #if numero != ""
+    if !numero.nil? && numero != ""
       @personas = Persona.find_by_numerodocumento(numero)
 
       if @personas.nil?      

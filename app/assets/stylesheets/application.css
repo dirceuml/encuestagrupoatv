@@ -28,7 +28,7 @@ h1
 #error{
     float:left;
     size: 100%;
-    border-color: #ff0000;
+    background-color: #ff3300;
     text-color: #ff0000;
 }
 

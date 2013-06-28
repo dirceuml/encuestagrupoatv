@@ -1,0 +1,27 @@
+<h1>Listing respuestas</h1>
+
+<table>
+  <tr>
+    <th>Survey</th>
+    <th>Question</th>
+    <th>Respuesta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @respuestas.each do |respuesta| %>
+  <tr>
+    <td><%= respuesta.survey_id %></td>
+    <td><%= respuesta.question_id %></td>
+    <td><%= respuesta.respuesta %></td>
+    <td><%= link_to 'Show', respuesta %></td>
+    <td><%= link_to 'Edit', edit_respuesta_path(respuesta) %></td>
+    <td><%= link_to 'Destroy', respuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Respuesta', new_respuesta_path %>

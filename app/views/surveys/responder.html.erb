@@ -1,0 +1,47 @@
+<% title "Encuesta" %>
+
+<div>
+  <strong><%=h @survey.name %></strong>  
+</div>
+
+
+<%= form_tag(responder_path, {"onSubmit" => "return verificarCantidadRespuestas('respuesta[]', 1, -1, 'alumno');", "name" => "respuesta"}) do %>
+
+  <div class="tabla">
+  <p>
+    <div class="titulo1">Pregunta</div><div class="titulo">Totalmente en desacuerdo</div><div class="titulo">En desacuerdo</div>  
+    <div class="titulo">Ni de acuerdo ni en desacuerdo</div><div class="titulo">De acuerdo</div><div class="titulo">Totalmente de acuerdo</div>
+  </p>
+
+
+    <% for question in @survey.questions %>
+    <p>
+       <div class="columna1">
+         <%= "#{question.id}. " %><%= h question.content %>
+       </div>
+
+      <% for numero_respuesta in [1,2,3,4,5] %>
+        <div class="columna">
+          <% nombre_rb = "respuesta[#{question.id}]" %>
+          <!--%= radio_button("post", nombre_rb, numero_respuesta) %--> 
+          <%= radio_button_tag nombre_rb, numero_respuesta %>
+          <!--input type="radio" name="resp[][]" value="" /-->
+        </div>
+      <% end %>
+    </p>
+    <% end %>
+    
+    <p>
+      <div style="float:left">
+          <br>
+          ¿A qué área pertenece usted?: <%= collection_select(:area, :codigoarea, Area.all, :codigoarea, :descripcion, {}, {:name => "codigoarea"}) %>
+          <br>
+      </div>
+    </p>
+  </div>
+
+  <div>
+    <%= submit_tag "Registrar respuestas" %>
+  </div>
+
+<% end %>

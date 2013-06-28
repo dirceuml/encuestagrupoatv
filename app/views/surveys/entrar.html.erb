@@ -1,0 +1,32 @@
+<% title "Encuesta" %>
+
+<% if params[:numerodocumento] == "" %>
+  <% numero = "" %>  
+<% else %>
+  <% numero = params[:numerodocumento] %>  
+  
+  <% if @personas.nil? %>
+    <% nombre = "" %> 
+  <% else %>
+    <% nombre = @personas.nombrecompleto %>  
+ <% end %>
+<% end %>
+
+ <hr>
+ <%= form_tag(entrarencuesta_path, {:method => :get, "onSubmit" => "return validarBusquedaXDocumento();", "name" => "buscar"}) do %>            
+   <div>
+      <div style="text-align: left;">
+        N° documento: <%= text_field_tag(:numerodocumento, numero) %>
+        <%= nombre %>
+      </div>
+      <br/>
+      <div>
+        <%= submit_tag "Ir a la encuesta", :name => nil %>
+      </div>
+    </div>         
+<% end %>
+<hr>
+
+<div class="error">
+  <%= @mensajeerror %>
+</div>

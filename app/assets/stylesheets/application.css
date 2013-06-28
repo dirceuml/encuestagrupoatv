@@ -1,0 +1,90 @@
+body
+{
+    background-color: #ffffff;
+}
+
+h1
+{
+    font-family: "Tahoma";
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+#titulo1{
+    float:left;
+    size: 80px;
+}
+
+#titulo2{
+    float:left;    
+    size: 20px;
+}
+
+#newrow{
+    clear: both;
+}
+
+#error{
+    float:left;
+    size: 100%;
+    border-color: #ff0000;
+    text-color: #ff0000;
+}
+
+.tabla {
+ width: 1000px;
+ border-top:1px solid #ccc;
+ border-left:1px solid #ccc;
+ background-color:#eee;
+ color: gray;
+ text-align:center;
+ font-family:arial,verdana,times;
+ font-size:12px;
+ }
+.tabla p {
+ clear:both;
+ width: 100%;
+ margin: 0;
+}
+
+.tabla .titulo1 {
+ padding: 5px;
+ background-color: #ddd;
+ font-family:arial,verdana,times;
+ float:left;
+ width:430px;
+ height: 30px;
+ border-right: 1px solid #ccc;
+ font-weight:bold;
+ }
+
+.tabla .titulo {
+ padding: 5px;
+ background-color: #ddd;
+ font-family:arial,verdana,times;
+ float:left;
+ width:100px;
+ height: 30px;
+ border-right: 1px solid #ccc;
+ font-weight:bold;
+ }
+
+.tabla .columna1 {
+ padding: 5px;
+ float:left;
+ width:430px;
+ height: 30px;
+ border-right: 1px solid #ccc;
+ border-bottom: 1px solid #ccc;
+ text-align: left;
+ } 
+
+.tabla .columna {
+ padding: 5px;
+ float:left;
+ width:100px;
+ height: 30px;
+ border-right: 1px solid #ccc;
+ border-bottom: 1px solid #ccc;
+ }

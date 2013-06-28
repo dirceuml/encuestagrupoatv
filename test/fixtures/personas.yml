@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  codigopersona: 1
+  nombrecompleto: MyString
+  numerodocumento: MyString
+
+two:
+  codigopersona: 1
+  nombrecompleto: MyString
+  numerodocumento: MyString

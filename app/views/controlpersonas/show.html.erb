@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numerodocumento:</b>
+  <%= @controlpersona.numerodocumento %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @controlpersona.estado %>
+</p>
+
+
+<%= link_to 'Edit', edit_controlpersona_path(@controlpersona) %> |
+<%= link_to 'Back', controlpersonas_path %>

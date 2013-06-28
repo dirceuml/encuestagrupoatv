@@ -16,6 +16,7 @@ Encuesta::Application.routes.draw do
   get "salirencuesta" => "surveys#salir", :as => "salirencuesta"
   get "entrarencuesta" => "surveys#entrar", :as => "entrarencuesta"
   get "responderencuesta" => "surveys#responder", :as => "responderencuesta"
+  get "responderencuesta2" => "surveys#responder2", :as => "responderencuesta2"
   
   post "responder" => "surveys#registrar_respuestas", :as => "responder"
 

@@ -14,6 +14,17 @@ class SurveysController < ApplicationController
     end
   end
   
+  def responder2
+    survey = 1 #params[:survey_id]
+    
+    @survey = Survey.find(survey)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @surveys }
+    end
+  end
+  
   # POST /crear_en_bloque
   # POST /crear_en_bloque.json
   def registrar_respuestas

@@ -12,7 +12,7 @@
  <% end %>
 <% end %>
 
- <hr>
+ 
  <%= form_tag(entrarencuesta_path, {:method => :get, "onSubmit" => "return validarBusquedaXDocumento();", "name" => "buscar"}) do %>            
    <div>
       <div style="text-align: left;">
@@ -25,10 +25,12 @@
       </div>
     </div>         
 <% end %>
-<hr>
+
 
 <p>
-<div class="error">
+<% if !@mensajeerror.nil? %>
+<div id="error">
   <%= @mensajeerror %>
 </div>
+<% end %>
 </p>

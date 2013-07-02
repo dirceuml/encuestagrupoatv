@@ -1,12 +1,21 @@
-<% title "Encuesta" %>
+<% title h @survey.name %>
 
-<div>
-  <strong><%=h @survey.name %></strong>  
+<p>
+<p>
+<div id="mensaje">
+    Por favor, dedique unos minutos a completar esta encuesta, la información que nos proporcione será utilizada para evaluar el nivel de satisfacción general de nuestros empleados con la empresa.
+    Sus respuestas serán tratadas de forma CONFIDENCIAL Y ANÓNIMA y no serán utilizadas para ningún propósito distinto al de ayudarnos a mejorar.
+    Esta encuesta dura aproximadamente 5 minutos.
 </div>
+<p>
+<p>
 
 
-<%= form_tag(responder_path, {"onSubmit" => "return verificarCantidadRespuestas('respuesta[]', 1, -1, 'alumno');", "name" => "respuesta"}) do %>
-
+<%= form_tag(responder_path) do %>
+  
+  <input id="id_persona_" name="id_persona" type="hidden" value="<%= params[:id_persona] %>" />
+  <!--%= hidden_field :id_persona, :value => params[:id_persona] %-->
+  
   <div class="tabla">
   <p>
     <div class="titulo1">Pregunta</div><div class="titulo">Totalmente en desacuerdo</div><div class="titulo">En desacuerdo</div>  
@@ -45,3 +54,6 @@
   </div>
 
 <% end %>
+
+<p>
+<p>

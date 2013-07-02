@@ -1,6 +1,6 @@
 body
 {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 h1
@@ -8,6 +8,13 @@ h1
     font-family: "Tahoma";
     font-weight: bold;
     font-size: 18px;
+}
+
+hr {
+  border: 1;
+  color: #990000;
+  height: 3px;
+  background-color: #990000;
 }
 
 
@@ -26,14 +33,26 @@ h1
 }
 
 #error{
-    float:left;
-    size: 100%;
-    background-color: #ff3300;
-    text-color: #ff0000;
+    background-color:#ff3300;
+    text-color:#ff0000;
+    height:30px;
+    font-family:arial,verdana,times;
+    font-size:14px;    
+    padding: 5px;
+}
+
+#mensaje{
+    color:#00a;
+    text-align:left;
+    font-family:arial,verdana,times;
+    font-size:14px;
+    width:100%;
+    padding: 10px;
+    font-weight:bold;
 }
 
 .tabla {
- width: 1000px;
+ width: 1200px;
  border-top:1px solid #ccc;
  border-left:1px solid #ccc;
  background-color:#eee;
@@ -53,7 +72,7 @@ h1
  background-color: #ddd;
  font-family:arial,verdana,times;
  float:left;
- width:430px;
+ width:600px;
  height: 30px;
  border-right: 1px solid #ccc;
  font-weight:bold;
@@ -73,8 +92,8 @@ h1
 .tabla .columna1 {
  padding: 5px;
  float:left;
- width:430px;
- height: 30px;
+ width:600px;
+ height: 25px;
  border-right: 1px solid #ccc;
  border-bottom: 1px solid #ccc;
  text-align: left;
@@ -84,7 +103,7 @@ h1
  padding: 5px;
  float:left;
  width:100px;
- height: 30px;
+ height: 25px;
  border-right: 1px solid #ccc;
  border-bottom: 1px solid #ccc;
  }

@@ -14,17 +14,6 @@ class SurveysController < ApplicationController
     end
   end
   
-  def responder2
-    survey = 1 #params[:survey_id]
-    
-    @survey = Survey.find(survey)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @surveys }
-    end
-  end
-  
   # POST /crear_en_bloque
   # POST /crear_en_bloque.json
   def registrar_respuestas
@@ -48,15 +37,19 @@ class SurveysController < ApplicationController
           :grupo => grupo
         )
 
-        if !@respuesta.save
+        if !@respuesta.save                    
           flash[:notice] = 'Ocurrio un error al registrar las respuestas'
           format.html { render action: "responder" }
         else
-          if @guardados.nil?
-            @guardados = [@respuesta.id]
-          else
-            @guardados.push(@respuesta)
-          end
+          documento = Persona.find(params[:id_persona]).numerodocumento
+          @control = Controlpersona.find_by_numerodocumento(documento)
+          if @control.update_attributes(:estado => 2)
+            if @guardados.nil?
+              @guardados = [@respuesta.id]
+            else
+              @guardados.push(@respuesta)
+            end
+          end                    
         end
       end        
     end
@@ -84,7 +77,7 @@ class SurveysController < ApplicationController
         #render :action => 'entrar'
       else
         @mensajeerror = ""
-        estado = Controlpersona.find_by_numerodocumento(@personas.numerodocumento)
+        estado = Controlpersona.find_by_numerodocumento(@personas.numerodocumento).estado
 
         if estado == 2
           @mensajeerror = "Usted ya ha contestado la encuesta"
@@ -92,8 +85,8 @@ class SurveysController < ApplicationController
         else
           @mensajeerror = ""
           
-          #ir a la encuesta
-          redirect_to responderencuesta_path and return
+          #ir a la encuesta          
+          redirect_to responderencuesta_path(:id_persona => @personas.id) and return
         end
       end      
     end
